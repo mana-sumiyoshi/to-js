@@ -15,6 +15,16 @@ addButton.addEventListener("click", () => {
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
 
+  // 削除
+  deleteButton.addEventListener("click", () => {
+    document
+      .getElementById("incomplete-list")
+      .removeChild(deleteButton.parentNode);
+  });
+
+  // 完了
+  completeButton.addEventListener("click", () => {});
+
   li.appendChild(span);
   li.appendChild(completeButton);
   li.appendChild(deleteButton);
