@@ -23,7 +23,28 @@ addButton.addEventListener("click", () => {
   });
 
   // 完了
-  completeButton.addEventListener("click", () => {});
+  completeButton.addEventListener("click", () => {
+    const completeText = completeButton.previousElementSibling.innerText;
+    console.log(completeText);
+
+    const li = document.createElement("li");
+    li.className = "list-row";
+    const span = document.createElement("span");
+    span.innerText = completeText;
+    const returnButton = document.createElement("button");
+    returnButton.innerText = "戻す";
+
+    li.appendChild(span);
+    li.appendChild(returnButton);
+
+    // 完了したTODOリストに追加
+    document.getElementById("complete-list").appendChild(li);
+
+    // 未完了のTODOリストから削除
+    document
+      .getElementById("incomplete-list")
+      .removeChild(deleteButton.parentNode);
+  });
 
   li.appendChild(span);
   li.appendChild(completeButton);
