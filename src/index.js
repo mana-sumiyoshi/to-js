@@ -48,10 +48,8 @@ const createIncompleteList = (text) => {
 
     li.appendChild(span);
     li.appendChild(returnButton);
-
     // 完了したTODOリストに追加
     document.getElementById("complete-list").appendChild(li);
-
     // 未完了のTODOリストから削除
     deleteFromImcompleteList(deleteButton.parentNode);
   });
